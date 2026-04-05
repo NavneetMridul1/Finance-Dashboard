@@ -1,31 +1,25 @@
 # Finance Dashboard UI
 
-A simple, responsive finance dashboard built with React (Create React App), Bootstrap, and Recharts.
+A clean, responsive finance dashboard built with React (Create React App), Bootstrap, and Recharts.
 
 ## Overview
 
-This project demonstrates a frontend-only dashboard where users can:
-
-- View key financial summary metrics (balance, income, expenses)
-- Explore transaction history with search, filtering, and sorting
-- Understand spending via trend and category visualizations
-- Switch role behavior in the UI (`viewer` and `admin`)
-- Review computed insights from transaction data
+This project is a frontend-only implementation that helps users track and understand financial activity through summary metrics, transaction exploration, visual trends, and lightweight role-based behavior.
 
 ## Tech Stack
 
-- React (Create React App)
+- React (Create React App, JavaScript)
 - Bootstrap 5
 - Recharts
-- React Context + `useReducer` for app state
+- React Context + `useReducer` for state management
 - Local Storage for persistence
 
 ## Features
 
 ### 1. Dashboard Overview
-- Summary cards: Total Balance, Income, Expenses
-- Time-based chart: monthly balance trend
-- Categorical chart: spending breakdown by category
+- Summary cards: Total Balance, Total Income, Total Expenses
+- Time-based visualization: monthly balance trend
+- Categorical visualization: spending breakdown by category
 
 ### 2. Transactions Section
 - Transaction fields: Date, Description, Category, Type, Amount
@@ -35,8 +29,8 @@ This project demonstrates a frontend-only dashboard where users can:
 
 ### 3. Basic Role-Based UI (Frontend Simulated)
 - `Viewer`: read-only mode
-- `Admin`: can add and edit transactions
-- Role switcher available in header
+- `User`: can add and edit transactions
+- Role switcher in the header for demo purposes
 
 ### 4. Insights Section
 - Highest spending category
@@ -44,60 +38,51 @@ This project demonstrates a frontend-only dashboard where users can:
 - Largest single expense
 
 ### 5. State Management
-Managed centrally with Context + reducer:
-
+Centralized in Context + reducer:
 - `transactions`
 - `selectedRole`
+- `selectedTheme`
 - `filters` (`searchText`, `typeFilter`, `categoryFilter`, `sortBy`, `sortDir`)
 
 ### 6. UX and Responsiveness
-- Bootstrap grid/card/table layout for desktop and mobile
-- Graceful empty states for no data/no results
-- Clean visual polish with subtle transitions
-- Dark mode toggle with persisted preference
-- Animated section/card entry and smooth UI transitions (with reduced-motion support)
+- Responsive Bootstrap layout for desktop/tablet/mobile
+- Graceful empty/no-result states
+- Dark mode toggle with persistence
+- Smooth animations/transitions with reduced-motion support
 
 ## Local Persistence
 
-The app stores these values in localStorage:
-
+The app persists the following values in localStorage:
 - `transactions`
 - `selectedRole`
 - `selectedTheme`
 
-On reload, it restores saved values with safe fallback to mock data.
+On reload, saved values are restored with safe fallback handling.
 
 ## Setup Instructions
 
-1. Install dependencies:
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Run development server:
+2. Start development server
 
 ```bash
 npm start
 ```
 
-3. Open:
+3. Open in browser
 
 `http://localhost:3000`
 
 ## Scripts
 
-- `npm start` - start dev server
-- `npm run build` - production build
+- `npm start` - Run development server
+- `npm run build` - Create production build
 
-## Assumptions
-
-- Frontend-only implementation (no backend/API)
-- Mock transaction dataset included
-- RBAC is simulated in UI only
-- Advanced extras (dark mode/export) are intentionally out of scope for v1
-
-## Project Structure (high-level)
+## Project Structure
 
 ```text
 src/
@@ -105,4 +90,7 @@ src/
   context/
   data/
   utils/
+public/
+  index.html
+  finance-logo.svg
 ```
