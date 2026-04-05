@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+:root {
+  --bg-start: #f7f8fb;
+  --bg-end: #eef3fa;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --border-color: rgba(15, 23, 42, 0.12);
+  --card-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  --accent: #0d6efd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root[data-theme='dark'] {
+  --bg-start: #0f172a;
+  --bg-end: #1e293b;
+  --surface: #111827;
+  --surface-soft: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(148, 163, 184, 0.25);
+  --card-shadow: 0 12px 28px rgba(2, 6, 23, 0.6);
+  --accent: #60a5fa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.dashboard-page {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: linear-gradient(120deg, var(--bg-start), var(--bg-end));
+  color: var(--text-primary);
+  transition: background 0.35s ease, color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard-header {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  animation: fadeSlideUp 0.4s ease;
 }
 
-@keyframes App-logo-spin {
+.finance-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(13, 110, 253, 0.3);
+}
+
+.role-select-wrap {
+  min-width: 220px;
+}
+
+.theme-switch .form-check-input {
+  cursor: pointer;
+  width: 2.8rem;
+  height: 1.4rem;
+}
+
+.summary-card,
+.chart-card,
+.card,
+.empty-state,
+.modal-content {
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.summary-card,
+.chart-card,
+.card,
+.empty-state {
+  animation: fadeSlideUp 0.45s ease both;
+}
+
+.summary-card:hover,
+.chart-card:hover,
+.card:hover {
+  transform: translateY(-2px);
+}
+
+section {
+  animation: fadeIn 0.5s ease;
+}
+
+.text-secondary,
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+.table,
+.form-control,
+.form-select,
+.btn {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text-primary);
+  --bs-table-border-color: var(--border-color);
+}
+
+.table > :not(caption) > * > * {
+  padding: 0.9rem 0.75rem;
+}
+
+.table-hover > tbody > tr {
+  transition: background-color 0.2s ease;
+}
+
+.table-hover > tbody > tr:hover {
+  --bs-table-accent-bg: rgba(13, 110, 253, 0.08);
+  --bs-table-hover-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--surface-soft);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.form-control::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
+
+.modal-backdrop {
+  background-color: rgba(2, 6, 23, 0.55);
+  animation: fadeIn 0.2s ease;
+}
+
+.modal.fade.show .modal-dialog {
+  animation: zoomIn 0.22s ease;
+}
+
+.badge.text-bg-light {
+  background-color: var(--surface-soft) !important;
+  color: var(--text-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[data-theme='dark'] .btn-close {
+  filter: invert(1) grayscale(100%);
+}
+
+.recharts-cartesian-axis-tick-value,
+.recharts-legend-item-text {
+  fill: var(--text-secondary);
+}
+
+@keyframes fadeSlideUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(8px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .role-select-wrap {
+    width: 100%;
+  }
+
+  .table-responsive {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
