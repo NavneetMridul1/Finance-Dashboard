@@ -5,7 +5,7 @@ export const mockTransactions = [
     description: 'Salary - January',
     category: 'Salary',
     type: 'income',
-    amount: 125000,
+    amount: 55000,
   },
   {
     id: 'txn-2',
@@ -13,7 +13,7 @@ export const mockTransactions = [
     description: 'Rent Payment',
     category: 'Housing',
     type: 'expense',
-    amount: 35000,
+    amount: 15000,
   },
   {
     id: 'txn-3',
@@ -21,7 +21,7 @@ export const mockTransactions = [
     description: 'Groceries - SuperMart',
     category: 'Food',
     type: 'expense',
-    amount: 8200,
+    amount: 4500,
   },
   {
     id: 'txn-4',
@@ -29,7 +29,7 @@ export const mockTransactions = [
     description: 'Freelance Design',
     category: 'Freelance',
     type: 'income',
-    amount: 22000,
+    amount: 8000,
   },
   {
     id: 'txn-5',
@@ -37,7 +37,7 @@ export const mockTransactions = [
     description: 'Salary - February',
     category: 'Salary',
     type: 'income',
-    amount: 125000,
+    amount: 55000,
   },
   {
     id: 'txn-6',
@@ -45,7 +45,7 @@ export const mockTransactions = [
     description: 'Utilities Bill',
     category: 'Utilities',
     type: 'expense',
-    amount: 4800,
+    amount: 2500,
   },
   {
     id: 'txn-7',
@@ -53,7 +53,7 @@ export const mockTransactions = [
     description: 'Restaurant Dinner',
     category: 'Food',
     type: 'expense',
-    amount: 2100,
+    amount: 1200,
   },
   {
     id: 'txn-8',
@@ -61,7 +61,7 @@ export const mockTransactions = [
     description: 'Internet Subscription',
     category: 'Utilities',
     type: 'expense',
-    amount: 1200,
+    amount: 800,
   },
   {
     id: 'txn-9',
@@ -69,7 +69,7 @@ export const mockTransactions = [
     description: 'Salary - March',
     category: 'Salary',
     type: 'income',
-    amount: 125000,
+    amount: 55000,
   },
   {
     id: 'txn-10',
@@ -77,7 +77,7 @@ export const mockTransactions = [
     description: 'Gym Membership',
     category: 'Health',
     type: 'expense',
-    amount: 1800,
+    amount: 1200,
   },
   {
     id: 'txn-11',
@@ -85,7 +85,7 @@ export const mockTransactions = [
     description: 'Flight Booking',
     category: 'Travel',
     type: 'expense',
-    amount: 18500,
+    amount: 6000,
   },
   {
     id: 'txn-12',
@@ -93,7 +93,7 @@ export const mockTransactions = [
     description: 'Stock Dividend',
     category: 'Investments',
     type: 'income',
-    amount: 12000,
+    amount: 3000,
   },
   {
     id: 'txn-13',
@@ -101,7 +101,7 @@ export const mockTransactions = [
     description: 'Movie Night',
     category: 'Entertainment',
     type: 'expense',
-    amount: 900,
+    amount: 400,
   },
   {
     id: 'txn-14',
@@ -109,6 +109,6 @@ export const mockTransactions = [
     description: 'Side Project Payment',
     category: 'Freelance',
     type: 'income',
-    amount: 28000,
+    amount: 12000,
   },
 ];
