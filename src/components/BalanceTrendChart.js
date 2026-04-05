@@ -35,7 +35,7 @@ const BalanceTrendChart = ({ data }) => {
               </defs>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
-              <YAxis tickFormatter={(value) => `$${value}`} />
+              <YAxis tickFormatter={(value) => formatCurrency(value)} />
               <Tooltip formatter={(value) => formatCurrency(value)} />
               <Area
                 type="monotone"
