@@ -11,6 +11,8 @@ import { formatCurrency } from '../utils/formatters';
 import EmptyState from './EmptyState';
 
 const BalanceTrendChart = ({ data }) => {
+  const formatAxisCurrency = (value) => `₹${Number(value).toLocaleString('en-IN')}`;
+
   if (!data.length) {
     return (
       <EmptyState
@@ -26,7 +28,7 @@ const BalanceTrendChart = ({ data }) => {
         <h3 className="h6 mb-3">Balance Trend</h3>
         <div style={{ width: '100%', height: 280 }}>
           <ResponsiveContainer>
-            <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+            <AreaChart data={data} margin={{ top: 10, right: 10, left: 18, bottom: 0 }}>
               <defs>
                 <linearGradient id="balanceGradient" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#0d6efd" stopOpacity={0.35} />
@@ -35,7 +37,7 @@ const BalanceTrendChart = ({ data }) => {
               </defs>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
-              <YAxis tickFormatter={(value) => formatCurrency(value)} />
+              <YAxis width={110} tickMargin={8} tickFormatter={formatAxisCurrency} />
               <Tooltip formatter={(value) => formatCurrency(value)} />
               <Area
                 type="monotone"
