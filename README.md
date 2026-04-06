@@ -29,7 +29,7 @@ This project is a frontend-only implementation that helps users track and unders
 
 ### 3. Basic Role-Based UI (Frontend Simulated)
 - `Viewer`: read-only mode
-- `User`: can add and edit transactions
+- `Admin`: can add and edit transactions
 - Role switcher in the header for demo purposes
 
 ### 4. Insights Section

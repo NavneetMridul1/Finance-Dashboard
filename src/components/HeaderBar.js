@@ -38,7 +38,7 @@ const HeaderBar = ({ selectedRole, onRoleChange, selectedTheme, onThemeToggle })
               onChange={(event) => onRoleChange(event.target.value)}
             >
               <option value="viewer">Viewer (read-only)</option>
-              <option value="admin">User (can add/edit)</option>
+              <option value="admin">Admin (can add/edit)</option>
             </select>
           </div>
         </div>
